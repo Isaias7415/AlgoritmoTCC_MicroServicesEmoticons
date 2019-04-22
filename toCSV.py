@@ -8,7 +8,7 @@ import json
 
 # lista = [{"1108510904168169483":{"text":"Boa noite galera! Twitter novo na pista Pois aquele foi removido por motivo de data errada... Segue aí  🤜🤛","data":"Wed Mar 20 23:29:29 +0000 2019","dispositivo":"Twitter for Android"}}]
 
-arqPostagensJson = open(".\PostagensJsonTotal12-04-2019.json", encoding='utf-8')
+arqPostagensJson = open(".\PostagensJsonTotal21-04-2019.json", encoding='utf-8')
 postagensJsonAux = arqPostagensJson.read()
 arqPostagensJson.close()
 postagensJson = json.loads(postagensJsonAux)
@@ -162,7 +162,7 @@ dir = "/EmoticonPostSeparados"
 if "EmoticonPostSeparados" not in os.listdir("../Teste"):
     os.mkdir(dir)
 df = pd.DataFrame(emoticonPostagem(onlyEmoticons))
-df.to_excel("../Teste/EmoticonPostSeparados/EmoticonsJsonTotal12-04-2019.xlsx")
+df.to_excel("../AlgoritmoTCC_MicroServicesEmoticons/EmoticonPostSeparados/EmoticonsJsonTotal21-04-2019.xlsx")
 
 
 #Transformar o dicionário de contagem total de emoticons em csv
@@ -173,10 +173,10 @@ df = pd.DataFrame(countEmojiRepetidos(onlyEmoticons))
 df = df.sort_values("Quantidade Total", ascending = False)
 aux2 = [i for i in range(len(df))]
 df.index = aux2
-df.to_excel("../Teste/EmoticonTotaisSeparados/EmoticonsJsonTotal12-04-2019.xlsx")
+df.to_excel("../AlgoritmoTCC_MicroServicesEmoticons/EmoticonTotaisSeparados/EmoticonsJsonTotal21-04-2019.xlsx")
 
 # Transforma o dicionário de postagem em um csv
 df = pd.DataFrame(onlyEmoticons)
-df.to_excel("./CSVPOstagensEmoticons/PostagensJsonTotal12-04-2019.xlsx")
+df.to_excel("./CSVPOstagensEmoticons/PostagensJsonTotal21-04-2019.xlsx")
 # df.to_excel("teste3OP.xlsx")
 # df.to_csv("PostagensEmoticons20-03-2019-Adjetivos.csv")
