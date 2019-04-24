@@ -8,13 +8,13 @@ import json
 
 # lista = [{"1108510904168169483":{"text":"Boa noite galera! Twitter novo na pista Pois aquele foi removido por motivo de data errada... Segue aí  🤜🤛","data":"Wed Mar 20 23:29:29 +0000 2019","dispositivo":"Twitter for Android"}}]
 
-arqPostagensJson = open(".\PostagensJsonTotal21-04-2019.json", encoding='utf-8')
+arqPostagensJson = open(".\PostagensJson23-04-2019-Eficiencia-Eficacia.json", encoding='utf-8')
 postagensJsonAux = arqPostagensJson.read()
 arqPostagensJson.close()
 postagensJson = json.loads(postagensJsonAux)
 # print(postagensJson)
-# print(len(postagensJson))
-# exit()
+print(len(postagensJson))
+exit()
 
 #-------------------------------------------------------------
 #Quando o id for corrigido, basta excluir esse bloco de codigo
@@ -155,7 +155,7 @@ verificaQtdEmojiDispositivo(onlyEmoticons)
 print("\n")
 print("Dispositivos sem Emoticons")
 verificaQtdEmojiDispositivo(withoutEmoticons)
-# exit()
+exit()
 
 #Transformar o dicionário de contagem de emoticons por postagem em csv
 dir = "/EmoticonPostSeparados"
