@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from builtins import set
-
 import os
 import pandas as pd
 import emoji
