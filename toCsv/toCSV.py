@@ -4,10 +4,8 @@ import pandas as pd
 import emoji
 import json
 
-# lista = [{"1108510904168169483":{"text":"Boa noite galera! Twitter novo na pista Pois aquele foi removido por motivo de data errada... Segue aí  🤜🤛","data":"Wed Mar 20 23:29:29 +0000 2019","dispositivo":"Twitter for Android"}}]
-
-#arqPostagensJson = open(".\PostagensJsonTotal07-05-2019.json", encoding='utf-8')
-arqPostagensJson = open(".\PostagensJson02-05-2019-Eficacia-Aprendizado.json", encoding='utf-8')
+arqPostagensJson = open(".\PostagensJsonTotal09-05-2019.json", encoding='utf-8')
+#arqPostagensJson = open(".\PostagensJson02-05-2019-Eficacia-Aprendizado.json", encoding='utf-8')
 postagensJsonAux = arqPostagensJson.read()
 arqPostagensJson.close()
 postagensJson = json.loads(postagensJsonAux)
@@ -15,20 +13,13 @@ postagensJson = json.loads(postagensJsonAux)
 #print(len(postagensJson))
 #exit()
 
-#-------------------------------------------------------------
-#Quando o id for corrigido, basta excluir esse bloco de codigo
 # Coloca o id como atributo do json
 nova_lista = []
 for v in postagensJson:
-# for v in lista:
-    # print(type(v))
     aux = list(v.keys())
     v = v.get(aux[0])
     v["id"] = aux[0]
     nova_lista += [v]
-#-------------------------------------------------------------
-# onlyEmoticons = []  # Variavel apra armazenar aepans as postagens com emoticons
-# onlyPostAttr = []  # Variavel apra armazenar aepans as postagens sem emoticons
 
 # Separa em dois arrays, um contendo apenas postagens com emoticons e outro contendo as sem emoticons CORRETO
 def onlyPostEmoticons(listaPostagens):
@@ -154,13 +145,14 @@ verificaQtdEmojiDispositivo(onlyEmoticons)
 print("\n")
 print("Dispositivos sem Emoticons")
 verificaQtdEmojiDispositivo(withoutEmoticons)
+exit()
 
 #Transformar o dicionário de contagem de emoticons por postagem em csv
 dir = "/EmoticonPostSeparados"
 if "EmoticonPostSeparados" not in os.listdir("../../AlgoritmoTCC_MicroServicesEmoticons"):
     os.mkdir(dir)
 df = pd.DataFrame(emoticonPostagem(onlyEmoticons))
-df.to_excel("../EmoticonPostSeparados/EmoticonsJsonTotal02-05-2019222.xlsx")
+df.to_excel("../EmoticonPostSeparados/EmoticonsJsonTotal09-05-2019.xlsx")
 
 
 #Transformar o dicionário de contagem total de emoticons em csv
@@ -171,10 +163,10 @@ df = pd.DataFrame(countEmojiRepetidos(onlyEmoticons))
 df = df.sort_values("Quantidade Total", ascending = False)
 aux2 = [i for i in range(len(df))]
 df.index = aux2
-df.to_excel("../EmoticonTotaisSeparados/EmoticonsJsonTotal02-05-2019222.xlsx")
+df.to_excel("../EmoticonTotaisSeparados/EmoticonsJsonTotal09-05-2019.xlsx")
 
 # Transforma o dicionário de postagem em um csv
 df = pd.DataFrame(onlyEmoticons)
-df.to_excel("../CSVPOstagensEmoticons/PostagensJsonTotal02-05-2019222.xlsx")
+df.to_excel("../CSVPOstagensEmoticons/PostagensJsonTotal09-05-2019.xlsx")
 # df.to_excel("teste3OP.xlsx")
 # df.to_csv("PostagensEmoticons20-03-2019-Adjetivos.csv")
