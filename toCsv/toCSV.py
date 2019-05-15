@@ -4,14 +4,14 @@ import pandas as pd
 import emoji
 import json
 
-arqPostagensJson = open(".\PostagensJsonTotal09-05-2019.json", encoding='utf-8')
-#arqPostagensJson = open(".\PostagensJson02-05-2019-Eficacia-Aprendizado.json", encoding='utf-8')
+arqPostagensJson = open(".\PostagensJsonTotal11-05-2019.json", encoding='utf-8')
+#arqPostagensJson = open(".\PostagensJson11-05-2019-Critica-Duvida.json", encoding='utf-8')
 postagensJsonAux = arqPostagensJson.read()
 arqPostagensJson.close()
 postagensJson = json.loads(postagensJsonAux)
 #print(postagensJson)
-#print(len(postagensJson))
-#exit()
+print(len(postagensJson))
+exit()
 
 # Coloca o id como atributo do json
 nova_lista = []
@@ -145,14 +145,14 @@ verificaQtdEmojiDispositivo(onlyEmoticons)
 print("\n")
 print("Dispositivos sem Emoticons")
 verificaQtdEmojiDispositivo(withoutEmoticons)
-exit()
+#exit()
 
 #Transformar o dicionário de contagem de emoticons por postagem em csv
 dir = "/EmoticonPostSeparados"
 if "EmoticonPostSeparados" not in os.listdir("../../AlgoritmoTCC_MicroServicesEmoticons"):
     os.mkdir(dir)
 df = pd.DataFrame(emoticonPostagem(onlyEmoticons))
-df.to_excel("../EmoticonPostSeparados/EmoticonsJsonTotal09-05-2019.xlsx")
+df.to_excel("../EmoticonPostSeparados/EmoticonsJsonTotal11-05-2019.xlsx")
 
 
 #Transformar o dicionário de contagem total de emoticons em csv
@@ -163,10 +163,11 @@ df = pd.DataFrame(countEmojiRepetidos(onlyEmoticons))
 df = df.sort_values("Quantidade Total", ascending = False)
 aux2 = [i for i in range(len(df))]
 df.index = aux2
-df.to_excel("../EmoticonTotaisSeparados/EmoticonsJsonTotal09-05-2019.xlsx")
+df.to_excel("../EmoticonTotaisSeparados/EmoticonsJsonTotal11-05-2019.xlsx")
 
 # Transforma o dicionário de postagem em um csv
 df = pd.DataFrame(onlyEmoticons)
-df.to_excel("../CSVPOstagensEmoticons/PostagensJsonTotal09-05-2019.xlsx")
+df.to_excel("../CSVPOstagensEmoticons/PostagensJsonTotal11-05-2019.xlsx")
+df.to_json("../JsonPOstagensEmoticons/PostagensJsonTotal11-05-2019.json")
 # df.to_excel("teste3OP.xlsx")
 # df.to_csv("PostagensEmoticons20-03-2019-Adjetivos.csv")

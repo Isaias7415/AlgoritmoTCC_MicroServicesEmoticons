@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41788a52-10cb-4d52-b1c0-5b2eb960d3e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSVPostagensEmoticons/PostagensJsonTotal09-05-2019.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmoticonPostSeparados/EmoticonsJsonTotal09-05-2019.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmoticonTotaisSeparados/EmoticonsJsonTotal09-05-2019.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/JsonBDEmoticon.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaBDEmoticon.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/PostagensJsonTotal09-05-2019.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/toCsv/PostagensJson09-05-2019-Eficacia-Confianca.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/toCsv/PostagensJson11-05-2019-Critica-Duvida.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/toCsv/PostagensJsonTotal09-05-2019.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSVPostagensEmoticons/PostagensJsonTotal11-05-2019.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EmoticonPostSeparados/EmoticonsJsonTotal11-05-2019.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EmoticonTotaisSeparados/EmoticonsJsonTotal11-05-2019.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JsonPOstagensEmoticons/PostagensJsonTotal11-05-2019.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PostagensClassificadas/PostagensPolaridadeJsonTotal09-05-2019.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PostagensClassificadas/PostagensPolaridadeJsonTotal11-05-2019.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PostagensJson15-04-2019-Critica-Comparação.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaTotal09-05-2019.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaTotal11-05-2019.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/PostagensJsonTotal11-05-2019.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/Teste.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/TesteTipo.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/TesteTipo.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/toCsv/PostagensJsonTotal11-05-2019.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaBDEmoticon.csv" beforeDir="false" afterPath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaBDEmoticon.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/toClassification.py" beforeDir="false" afterPath="$PROJECT_DIR$/algoritmoClassificacao/toClassification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toCsv/PostagensJson11-05-2019-Critica-Duvida.json" beforeDir="false" afterPath="$PROJECT_DIR$/toCsv/PostagensJson11-05-2019-Critica-Duvida.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/toCsv/toCSV.py" beforeDir="false" afterPath="$PROJECT_DIR$/toCsv/toCSV.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,14 +33,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/algoritmoClassificacao/toClassification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
+            <state relative-caret-position="27">
+              <caret line="255" column="37" lean-forward="true" selection-start-line="255" selection-start-column="37" selection-end-line="255" selection-end-column="37" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
-                <element signature="e#169#432#0" />
-                <element signature="e#513#703#0" />
-                <element signature="e#854#1477#0" />
-                <element signature="e#1602#1951#0" />
+                <element signature="e#3910#5067#0" />
+                <element signature="e#5105#7675#0" />
               </folding>
             </state>
           </provider>
@@ -42,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/toCsv/toCSV.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-231">
-              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            <state relative-caret-position="3066">
+              <caret line="149" selection-start-line="149" selection-end-line="155" />
             </state>
           </provider>
         </entry>
@@ -60,6 +65,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>df</find>
+      <find>😂</find>
+      <find>🤜</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -75,21 +83,23 @@
       <list>
         <option value="$PROJECT_DIR$/algoritmoClassificacao/JsonBDEmoticon.json" />
         <option value="$PROJECT_DIR$/toCsv/toCSV.py" />
+        <option value="$PROJECT_DIR$/algoritmoClassificacao/PostagensJsonTotal11-05-2019.json" />
         <option value="$PROJECT_DIR$/algoritmoClassificacao/toClassification.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="170" />
-    <option name="y" value="91" />
-    <option name="width" value="1026" />
-    <option name="height" value="546" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="784" />
+    <option name="height" value="1342" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,7 +121,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -222,26 +231,33 @@
       <option name="project" value="LOCAL" />
       <updated>1557365737825</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Novas extrações e Inicio do algoritmo para classificação">
+      <created>1557607430782</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1557607430783</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28422618" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1904762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2831424" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29623568" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5220949" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.8281506" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -249,7 +265,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Files" />
+    <MESSAGE value="Novas extrações e Inicio do algoritmo para classificação" />
+    <option name="LAST_COMMIT_MESSAGE" value="Novas extrações e Inicio do algoritmo para classificação" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/JsonTotal/PostagensJson24-03-2019-Critica.json">
@@ -279,24 +296,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/toCsv/toCSV.py">
+    <entry file="file://$PROJECT_DIR$/algoritmoClassificacao/PostagensJsonTotal11-05-2019.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-231">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        <state relative-caret-position="462">
+          <caret line="4666" column="33" selection-start-line="4666" selection-start-column="33" selection-end-line="4666" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!block;n#data#0;n#!!top" />
+            <element signature="n#!!block;n#dispositivo#0;n#!!top" />
+            <element signature="n#!!block;n#id#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algoritmoClassificacao/toClassification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
+        <state relative-caret-position="27">
+          <caret line="255" column="37" lean-forward="true" selection-start-line="255" selection-start-column="37" selection-end-line="255" selection-end-column="37" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
-            <element signature="e#169#432#0" />
-            <element signature="e#513#703#0" />
-            <element signature="e#854#1477#0" />
-            <element signature="e#1602#1951#0" />
+            <element signature="e#3910#5067#0" />
+            <element signature="e#5105#7675#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toCsv/toCSV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3066">
+          <caret line="149" selection-start-line="149" selection-end-line="155" />
         </state>
       </provider>
     </entry>
