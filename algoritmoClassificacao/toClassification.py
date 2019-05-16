@@ -123,16 +123,39 @@ def toFormatJsonData(path):
 # print(toFormatJsonData(".\PostagensJsonTotal11-05-2019.json"))
 # emoticonBDAux = toFormatJsonEmoticon(".\PlanilhaBDEmoticon.csv")
 
+def verificaMaximoRepetidos(valoresTipo):
+    # Define o objeto que armazenará os índices de cada elemento:
+    keys = defaultdict(list);
+    jsonAux = {}
+    # Percorre todos os elementos da lista:
+    for key, value in enumerate(valoresTipo):
+        # Adiciona o índice do valor na lista de índices:
+        keys[value].append(key)
+    # Exibe o resultado:
+    for value in keys:
+        # if len(keys[value]) > 1:
+        if max(keys) == value:
+            # print(value, keys[value])
+            jsonAux["Valor"] = value
+            jsonAux["Indices"] = keys[value]
+    return jsonAux
+# print(verificaRepetidos([1,3,2,2,5,3,5]))
+# exit()
+
 # Função para calcular a polaridade principal de cada emoticon
 def calculaPolaridade(jsonBD):
     emoticonPolaridade = []
     emoticonIndefinido = []
     for elem in jsonBD:
         jsonAux = {}
+        listAux = []
         jsonAuxIndefinido = {}
         auxPos = elem["Positiva"]
         auxNeg = elem["Negativa"]
         auxNeu = elem["Neutra"]
+        listAux.append(auxPos)
+        listAux.append()
+
 
         if(auxPos > auxNeg) and (auxPos > auxNeu):#Classifica o Emoticon como positivo
             jsonAux["Emoticon"] = elem["Emoticon"]
@@ -155,55 +178,41 @@ def calculaPolaridade(jsonBD):
 
 # Função para calcular o tipo principal de cada emoticon
 def calculaValorDoTipo(jsonBD):
+    # {'id': 0, 'Emoticon': '😂', 'Positiva': 9, 'Neutra': 7, 'Negativa': 7, 'Crítica': 7, 'Elogio': 8, 'Dúvida': 4,
+     # 'Comparação': 4, 'Sugestão': 0, 'Ajuda': 0}
     emoticonPolaridade = []
     for elem in jsonBD:
+        valorMaxRepetidoTipo = []
+        listAuxTipos = []
         jsonAux = {}
-        auxCritica = elem["Crítica"]
-        auxElogio = elem["Elogio"]
-        auxDuvida = elem["Dúvida"]
-        auxComparacao = elem["Comparação"]
-        auxSugestao = elem["Sugestão"]
-        auxAjuda = elem["Ajuda"]
-
-        if(auxCritica > auxElogio) and (auxCritica > auxDuvida)\
-                and (auxCritica > auxComparacao) and (auxCritica > auxSugestao)\
-                and (auxCritica > auxAjuda):#Classifica o Emoticon com o tipo Crítica
-            jsonAux["Emoticon"] = elem["Emoticon"]
-            jsonAux["Tipo"] = "Crítica"
-            emoticonPolaridade.append(jsonAux)
-        elif(auxElogio > auxCritica) and (auxElogio > auxDuvida)\
-                and (auxElogio > auxComparacao) and (auxElogio > auxSugestao)\
-                and (auxElogio > auxAjuda):#Classifica o Emoticon com o tipo Elogio
-            jsonAux["Emoticon"] = elem["Emoticon"]
-            jsonAux["Tipo"] = "Elogio"
-            emoticonPolaridade.append(jsonAux)
-        elif(auxDuvida > auxCritica) and (auxDuvida > auxElogio)\
-                and (auxDuvida > auxComparacao) and (auxDuvida > auxSugestao)\
-                and (auxDuvida > auxAjuda):#Classifica o Emoticon com o tipo Duvida
-            jsonAux["Emoticon"] = elem["Emoticon"]
-            jsonAux["Tipo"] = "Dúvida"
-            emoticonPolaridade.append(jsonAux)
-        elif (auxComparacao > auxCritica) and (auxComparacao > auxDuvida) \
-                and (auxComparacao > auxElogio) and (auxComparacao > auxSugestao) \
-                and (auxComparacao > auxAjuda):  # Classifica o Emoticon com o tipo Comparação
-            jsonAux["Emoticon"] = elem["Emoticon"]
-            jsonAux["Tipo"] = "Comparação"
-            emoticonPolaridade.append(jsonAux)
-        elif (auxSugestao > auxCritica) and (auxSugestao > auxDuvida) \
-                and (auxSugestao > auxComparacao) and (auxSugestao > auxElogio) \
-                and (auxSugestao > auxAjuda):  # Classifica o Emoticon com o tipo sugestão
-            jsonAux["Emoticon"] = elem["Emoticon"]
-            jsonAux["Tipo"] = "Sugestão"
-            emoticonPolaridade.append(jsonAux)
-        elif (auxAjuda > auxCritica) and (auxAjuda > auxDuvida) \
-                and (auxAjuda > auxComparacao) and (auxAjuda > auxSugestao) \
-                and (auxAjuda > auxElogio):  # Classifica o Emoticon com o tipo Ajuda
-            jsonAux["Emoticon"] = elem["Emoticon"]
-            jsonAux["Tipo"] = "Ajuda"
-            emoticonPolaridade.append(jsonAux)
-
+        auxElogio = elem["Elogio"]; listAuxTipos.append(auxElogio)
+        auxCritica = elem["Crítica"]; listAuxTipos.append(auxCritica)
+        auxDuvida = elem["Dúvida"]; listAuxTipos.append(auxDuvida)
+        auxComparacao = elem["Comparação"]; listAuxTipos.append(auxComparacao)
+        auxAjuda = elem["Ajuda"]; listAuxTipos.append(auxAjuda)
+        auxSugestao = elem["Sugestão"]; listAuxTipos.append(auxSugestao)
+        valorMaxRepetidoTipo = verificaMaximoRepetidos(listAuxTipos)
+        # print(valorMaxRepetidoTipo)
+        # exit()
+        jsonAux["Emoticon"] = elem["Emoticon"]
+        jsonAux["Tipo"] = []
+        for i in valorMaxRepetidoTipo["Indices"]:
+            if i == 0:
+                jsonAux["Tipo"] += ["Elogio"]
+            elif i == 1:
+                jsonAux["Tipo"] += ["Crítica"]
+            elif i == 2:
+                jsonAux["Tipo"] += ["Dúvida"]
+            elif i == 3:
+                jsonAux["Tipo"] += ["Comparação"]
+            elif i == 4:
+                jsonAux["Tipo"] += ["Ajuda"]
+            elif i == 5:
+                jsonAux["Tipo"] += ["Sugestão"]
+        emoticonPolaridade.append(jsonAux)
     return emoticonPolaridade
 # pd.DataFrame(calculaValorDoTipo(toFormatJsonEmoticon(".\PlanilhaBDEmoticon.csv"))).to_csv("TesteTipo.csv")
+# print(calculaValorDoTipo(toFormatJsonEmoticon(".\PlanilhaBDEmoticon.csv"))[0])
 # exit()
 
 # Função para classificar a polaridade da cada postagem, com base no emoticon
@@ -232,55 +241,40 @@ def classificaPolaridade(emoticonsPolaridade, postagensAux):
             jsonClassificadoPolaridadeAux.append(jsonAux)
     return jsonClassificadoPolaridadeAux
 
-def verificaRepetidos(valoresTipo):
-    # Define o objeto que armazenará os índices de cada elemento:
-    keys = defaultdict(list);
-    jsonAux = {}
-    # Percorre todos os elementos da lista:
-    for key, value in enumerate(valoresTipo):
-        # Adiciona o índice do valor na lista de índices:
-        keys[value].append(key)
-    # Exibe o resultado:
-    for value in keys:
-        # if len(keys[value]) > 1:
-        if max(keys) == value:
-            # print(value, keys[value])
-            jsonAux["Valor"] = value
-            jsonAux["Indices"] = keys[value]
-    return jsonAux
-# print(verificaRepetidos([1,3,2,2,5,3,5]))
-# exit()
-
 def classificaTipo(emoticonsBD, postagensAux):
     jsonClassificadoTipoAux = []
     for elem in postagensAux:
+        # elem = {'ID': 1108482362386591746, 'N°': 2, 'Data': 'Wed Mar 20 21:36:04 +0000 2019',
+        #  'text': 'Twitter novo é muito ruim 🙄😂', 'Emojis da Postagem': '🙄(1)', 'PRU/Não-PRU': 'PRU',
+        #  'Tipo': 'Crítica', 'Analise de Sentimento': 'Negativa', 'Artefato': 'Twitter for Android'}
         valorMaxRepetidoTipo = {} #Armazena os tipos mais predominantes para cada postagem
         jsonAux = {}
         listAuxTipos = [] #Armazena os valores dos tipos presentens na sentença
         elogioAux, criticaAux, duvidaAux, comparacaoAux, ajudaAux, sugestaoAux = 0, 0, 0, 0, 0, 0
         for elem2 in emoticonsBD:
             if (elem["text"].find(elem2["Emoticon"])) >= 0:
-                if elem2["Tipo"] == "Elogio":
-                    elogioAux += 1
-                elif elem2["Tipo"] == "Crítica":
-                    criticaAux += 1
-                elif elem2["Tipo"] == "Dúvida":
-                    duvidaAux += 1
-                elif elem2["Tipo"] == "Comparação":
-                    comparacaoAux += 1
-                elif elem2["Tipo"] == "Ajuda":
-                    ajudaAux += 1
-                elif elem2["Tipo"] == "Sugestão":
-                    sugestaoAux += 1
+                for elem3 in elem2["Tipo"]:
+                    if elem3 == "Elogio":
+                        elogioAux += 1
+                    elif elem3 == "Crítica":
+                        criticaAux += 1
+                    elif elem3 == "Dúvida":
+                        duvidaAux += 1
+                    elif elem3 == "Comparação":
+                        comparacaoAux += 1
+                    elif elem3 == "Ajuda":
+                        ajudaAux += 1
+                    elif elem3 == "Sugestão":
+                        sugestaoAux += 1
         listAuxTipos.append(elogioAux)
         listAuxTipos.append(criticaAux)
         listAuxTipos.append(duvidaAux)
         listAuxTipos.append(comparacaoAux)
         listAuxTipos.append(ajudaAux)
         listAuxTipos.append(sugestaoAux)
-        valorMaxRepetidoTipo = verificaRepetidos(listAuxTipos)
-
-        # print(valorMaxRepetidoTipo)
+        valorMaxRepetidoTipo = verificaMaximoRepetidos(listAuxTipos)
+        # print(elem)
+        # print(listAuxTipos)
         # exit()
         jsonAux["Postagem"] = elem["text"]
         jsonAux["Tipo"] = []
@@ -337,7 +331,7 @@ def classificaPostagem(postagensAux):
 
     return classificacaoPolaridade
 # jsonPostagensClassificadas = classificaPostagem(toFormatJsonData(".\PostagensJsonTotal11-05-2019.json"))
-onlyPru = separaPru(toFormatJsonBDPostagens(".\PlanilhaTotal11-05-2019.csv"))
+onlyPru = separaPru(toFormatJsonBDPostagens(".\PlanilhaTotal11-05-2019Aux.csv"))
 jsonPostagensClassificadasPrus = classificaPostagem(onlyPru)
 
 # pd.DataFrame(jsonPostagensClassificadasPrus).to_excel("../PostagensClassificadas/PostagensPolaridadeJsonTotal11-05-2019.xlsx")
@@ -368,7 +362,7 @@ verificaAcertos(onlyPru,jsonPostagensClassificadasPrus)
 exit()
 
 #Transformar o dicionário de classifica de postagens em csv
-dir = "/PostagensClassificadas"
+# dir = "/PostagensClassificadas"
 # if "PostagensClassificadas" not in os.listdir("../../AlgoritmoTCC_MicroServicesEmoticons"):
 #     print("das")
 #     os.mkdir(dir)
