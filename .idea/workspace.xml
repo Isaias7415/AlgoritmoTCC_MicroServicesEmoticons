@@ -2,25 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41788a52-10cb-4d52-b1c0-5b2eb960d3e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CSVPostagensEmoticons/PostagensJsonTotal11-05-2019.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmoticonPostSeparados/EmoticonsJsonTotal11-05-2019.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EmoticonTotaisSeparados/EmoticonsJsonTotal11-05-2019.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JsonPOstagensEmoticons/PostagensJsonTotal11-05-2019.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PostagensClassificadas/PostagensPolaridadeJsonTotal09-05-2019.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PostagensClassificadas/PostagensPolaridadeJsonTotal11-05-2019.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PostagensJson15-04-2019-Critica-Comparação.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaTotal09-05-2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaTotal11-05-2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/PostagensJsonTotal11-05-2019.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/Teste.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/TesteTipo.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/TesteTipo.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/toCsv/PostagensJsonTotal11-05-2019.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaBDEmoticon.csv" beforeDir="false" afterPath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaBDEmoticon.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaTotal11-05-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaTotal11-05-2019.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/PostagensJsonTotal09-05-2019.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/Teste.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/TesteTipo.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/TesteTipo.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/toClassification.py" beforeDir="false" afterPath="$PROJECT_DIR$/algoritmoClassificacao/toClassification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toCsv/PostagensJson11-05-2019-Critica-Duvida.json" beforeDir="false" afterPath="$PROJECT_DIR$/toCsv/PostagensJson11-05-2019-Critica-Duvida.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toCsv/toCSV.py" beforeDir="false" afterPath="$PROJECT_DIR$/toCsv/toCSV.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,12 +22,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/algoritmoClassificacao/toClassification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="255" column="37" lean-forward="true" selection-start-line="255" selection-start-column="37" selection-end-line="255" selection-end-column="37" />
+            <state relative-caret-position="371">
+              <caret line="339" column="70" selection-start-line="339" selection-start-column="70" selection-end-line="339" selection-end-column="70" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
-                <element signature="e#3910#5067#0" />
-                <element signature="e#5105#7675#0" />
+                <element signature="e#126#316#0" />
+                <element signature="e#520#1566#0" />
+                <element signature="e#1607#2653#0" />
+                <element signature="e#2762#3000#0" />
+                <element signature="e#3242#3741#0" />
+                <element signature="e#3973#5130#0" />
+                <element signature="e#5225#7795#0" />
+                <element signature="e#8058#9051#0" />
+                <element signature="e#9128#9671#0" />
+                <element signature="e#9516#10007#0" />
+                <element signature="e#11179#11902#0" />
+                <element signature="e#10999#12493#0" />
+                <element signature="e#12999#13683#0" />
               </folding>
             </state>
           </provider>
@@ -99,7 +99,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -121,6 +120,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -238,26 +238,42 @@
       <option name="project" value="LOCAL" />
       <updated>1557607430783</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update no algoritmo de classificação">
+      <created>1557915885653</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1557915885653</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1904762" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10565476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29623568" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33551556" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5220949" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.8281506" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.66121113" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -266,7 +282,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Files" />
     <MESSAGE value="Novas extrações e Inicio do algoritmo para classificação" />
-    <option name="LAST_COMMIT_MESSAGE" value="Novas extrações e Inicio do algoritmo para classificação" />
+    <MESSAGE value="Update no algoritmo de classificação" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update no algoritmo de classificação" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/JsonTotal/PostagensJson24-03-2019-Critica.json">
@@ -310,12 +327,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/algoritmoClassificacao/toClassification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="255" column="37" lean-forward="true" selection-start-line="255" selection-start-column="37" selection-end-line="255" selection-end-column="37" />
+        <state relative-caret-position="371">
+          <caret line="339" column="70" selection-start-line="339" selection-start-column="70" selection-end-line="339" selection-end-column="70" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
-            <element signature="e#3910#5067#0" />
-            <element signature="e#5105#7675#0" />
+            <element signature="e#126#316#0" />
+            <element signature="e#520#1566#0" />
+            <element signature="e#1607#2653#0" />
+            <element signature="e#2762#3000#0" />
+            <element signature="e#3242#3741#0" />
+            <element signature="e#3973#5130#0" />
+            <element signature="e#5225#7795#0" />
+            <element signature="e#8058#9051#0" />
+            <element signature="e#9128#9671#0" />
+            <element signature="e#9516#10007#0" />
+            <element signature="e#11179#11902#0" />
+            <element signature="e#10999#12493#0" />
+            <element signature="e#12999#13683#0" />
           </folding>
         </state>
       </provider>

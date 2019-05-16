@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import emoji
 import json
-
+from collections import defaultdict
 #Abre um arquivo Json
 def openJson(path):
     arqEmoticonJson = open(path, encoding='utf-8')
@@ -232,17 +232,33 @@ def classificaPolaridade(emoticonsPolaridade, postagensAux):
             jsonClassificadoPolaridadeAux.append(jsonAux)
     return jsonClassificadoPolaridadeAux
 
+def verificaRepetidos(valoresTipo):
+    # Define o objeto que armazenará os índices de cada elemento:
+    keys = defaultdict(list);
+    jsonAux = {}
+    # Percorre todos os elementos da lista:
+    for key, value in enumerate(valoresTipo):
+        # Adiciona o índice do valor na lista de índices:
+        keys[value].append(key)
+    # Exibe o resultado:
+    for value in keys:
+        # if len(keys[value]) > 1:
+        if max(keys) == value:
+            # print(value, keys[value])
+            jsonAux["Valor"] = value
+            jsonAux["Indices"] = keys[value]
+    return jsonAux
+# print(verificaRepetidos([1,3,2,2,5,3,5]))
+# exit()
+
 def classificaTipo(emoticonsBD, postagensAux):
     jsonClassificadoTipoAux = []
     for elem in postagensAux:
-        elogioAux = 0
-        criticaAux = 0
-        duvidaAux = 0
-        comparacaoAux = 0
-        ajudaAux = 0
-        sugestaoAux = 0
+        valorMaxRepetidoTipo = {} #Armazena os tipos mais predominantes para cada postagem
+        jsonAux = {}
+        listAuxTipos = [] #Armazena os valores dos tipos presentens na sentença
+        elogioAux, criticaAux, duvidaAux, comparacaoAux, ajudaAux, sugestaoAux = 0, 0, 0, 0, 0, 0
         for elem2 in emoticonsBD:
-            jsonAux = {}
             if (elem["text"].find(elem2["Emoticon"])) >= 0:
                 if elem2["Tipo"] == "Elogio":
                     elogioAux += 1
@@ -256,21 +272,34 @@ def classificaTipo(emoticonsBD, postagensAux):
                     ajudaAux += 1
                 elif elem2["Tipo"] == "Sugestão":
                     sugestaoAux += 1
-        print(str(elogioAux)+" "+str(criticaAux)+" "+str(duvidaAux)+" "+str(comparacaoAux)+" "+str(ajudaAux)+" "+str(sugestaoAux))
-        exit()
-        if polaridadeAux == 0:
-            jsonAux["Postagem"] = elem["text"]
-            jsonAux["Polaridade"] = "Neutra"
-            jsonClassificadoPolaridadeAux.append(jsonAux)
-        elif polaridadeAux > 0:
-            jsonAux["Postagem"] = elem["text"]
-            jsonAux["Polaridade"] = "Positiva"
-            jsonClassificadoPolaridadeAux.append(jsonAux)
-        if polaridadeAux < 0:
-            jsonAux["Postagem"] = elem["text"]
-            jsonAux["Polaridade"] = "Negativa"
-            jsonClassificadoPolaridadeAux.append(jsonAux)
-    return jsonClassificadoPolaridadeAux
+        listAuxTipos.append(elogioAux)
+        listAuxTipos.append(criticaAux)
+        listAuxTipos.append(duvidaAux)
+        listAuxTipos.append(comparacaoAux)
+        listAuxTipos.append(ajudaAux)
+        listAuxTipos.append(sugestaoAux)
+        valorMaxRepetidoTipo = verificaRepetidos(listAuxTipos)
+
+        # print(valorMaxRepetidoTipo)
+        # exit()
+        jsonAux["Postagem"] = elem["text"]
+        jsonAux["Tipo"] = []
+        for i in valorMaxRepetidoTipo["Indices"]:
+            if i == 0:
+                jsonAux["Tipo"] += ["Elogio"]
+            elif i == 1:
+                jsonAux["Tipo"] += ["Crítica"]
+            elif i == 2:
+                jsonAux["Tipo"] += ["Dúvida"]
+            elif i == 3:
+                jsonAux["Tipo"] += ["Comparação"]
+            elif i == 4:
+                jsonAux["Tipo"] += ["Ajuda"]
+            elif i == 5:
+                jsonAux["Tipo"] += ["Sugestão"]
+
+        jsonClassificadoTipoAux.append(jsonAux)
+    return jsonClassificadoTipoAux
 
 # Executa a stack para classificar as postagens
 def classificaPostagem(postagensAux):
