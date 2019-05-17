@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41788a52-10cb-4d52-b1c0-5b2eb960d3e7" name="Default Changelist" comment="Update no algoritmo de classificação">
+    <list default="true" id="41788a52-10cb-4d52-b1c0-5b2eb960d3e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PostagensClassificadas/PostagensPolaridadeJsonTotal11-05-2019.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/PostagensClassificadas/PostagensPolaridadeJsonTotal11-05-2019.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaTotal11-05-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaTotal11-05-2019.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/toClassification.py" beforeDir="false" afterPath="$PROJECT_DIR$/algoritmoClassificacao/toClassification.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,15 +18,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/algoritmoClassificacao/toClassification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="156" column="23" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
+            <state relative-caret-position="120">
+              <caret line="364" column="54" selection-start-line="364" selection-start-column="54" selection-end-line="364" selection-end-column="54" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
                 <element signature="e#3277#3776#0" />
-                <element signature="e#3956#4499#0" />
-                <element signature="e#5904#7373#0" />
-                <element signature="e#7717#8710#0" />
-                <element signature="e#8763#11069#0" />
+                <element signature="e#6369#7838#0" />
+                <element signature="e#8182#9175#0" />
+                <element signature="e#9228#11472#0" />
+                <element signature="e#12857#13541#0" />
               </folding>
             </state>
           </provider>
@@ -33,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/toCsv/toCSV.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3066">
-              <caret line="149" selection-start-line="149" selection-end-line="155" />
+            <state relative-caret-position="2662">
+              <caret line="142" column="14" lean-forward="true" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -54,6 +56,7 @@
       <find>😂</find>
       <find>🤜</find>
       <find>print</find>
+      <find>len(classificacaoTipo[&quot;Tipo&quot;])</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -75,10 +78,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1358" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="170" />
+    <option name="y" value="91" />
+    <option name="width" value="1026" />
+    <option name="height" value="546" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -238,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557965446906</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update no algoritmo de classificação">
+      <created>1558027717913</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1558027717913</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -251,16 +261,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.074288726" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49851632" weight="0.10491072" />
+      <window_info id="Structure" order="1" sideWeight="0.5014837" side_tool="true" weight="0.10491072" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4312026" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.52112675" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3420622" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.44844517" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
@@ -319,25 +329,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/algoritmoClassificacao/toClassification.py">
+    <entry file="file://$PROJECT_DIR$/toCsv/toCSV.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="156" column="23" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-            <element signature="e#3277#3776#0" />
-            <element signature="e#3956#4499#0" />
-            <element signature="e#5904#7373#0" />
-            <element signature="e#7717#8710#0" />
-            <element signature="e#8763#11069#0" />
-          </folding>
+        <state relative-caret-position="2662">
+          <caret line="142" column="14" lean-forward="true" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/toCsv/toCSV.py">
+    <entry file="file://$PROJECT_DIR$/algoritmoClassificacao/toClassification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3066">
-          <caret line="149" selection-start-line="149" selection-end-line="155" />
+        <state relative-caret-position="120">
+          <caret line="364" column="54" selection-start-line="364" selection-start-column="54" selection-end-line="364" selection-end-column="54" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+            <element signature="e#3277#3776#0" />
+            <element signature="e#6369#7838#0" />
+            <element signature="e#8182#9175#0" />
+            <element signature="e#9228#11472#0" />
+            <element signature="e#12857#13541#0" />
+          </folding>
         </state>
       </provider>
     </entry>

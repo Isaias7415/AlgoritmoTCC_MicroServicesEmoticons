@@ -146,35 +146,42 @@ def verificaMaximoRepetidos(valoresTipo):
 def calculaPolaridade(jsonBD):
     emoticonPolaridade = []
     emoticonIndefinido = []
+    # {'id': 0, 'Emoticon': '😂', 'Positiva': 9, 'Neutra': 7,
+    #  'Negativa': 7, 'Crítica': 7, 'Elogio': 8, 'Dúvida': 4,
+    #  'Comparação': 4, 'Sugestão': 0, 'Ajuda': 0}
     for elem in jsonBD:
+        listAuxRepetidos = []
         jsonAux = {}
         listAux = []
         jsonAuxIndefinido = {}
         auxPos = elem["Positiva"]
         auxNeg = elem["Negativa"]
         auxNeu = elem["Neutra"]
-        listAux.append(auxPos)
-        listAux.append()
-
-
-        if(auxPos > auxNeg) and (auxPos > auxNeu):#Classifica o Emoticon como positivo
-            jsonAux["Emoticon"] = elem["Emoticon"]
-            jsonAux["Polaridade"] = "Positiva"
-            emoticonPolaridade.append(jsonAux)
-        elif(auxNeg > auxPos) and (auxNeg > auxNeu):#Classifica o Emoticon como negativo
-            jsonAux["Emoticon"] = elem["Emoticon"]
-            jsonAux["Polaridade"] = "Negativa"
-            emoticonPolaridade.append(jsonAux)
-        elif (auxNeu > auxPos) and (auxNeu > auxNeg):#Classifica o Emoticon como neutro
-            jsonAux["Emoticon"] = elem["Emoticon"]
-            jsonAux["Polaridade"] = "Neutra"
-            emoticonPolaridade.append(jsonAux)
+        listAux.append(elem["Positiva"])
+        listAux.append(elem["Negativa"])
+        listAux.append(elem["Neutra"])
+        listAuxRepetidos = verificaMaximoRepetidos(listAux)
+        # print(len(listAuxRepetidos["Indices"]))
+        # exit()
+        if len(listAuxRepetidos["Indices"]) == 1:
+            if listAuxRepetidos["Indices"][0] == 0:
+                jsonAux["Emoticon"] = elem["Emoticon"]
+                jsonAux["Polaridade"] = "Positiva"
+                emoticonPolaridade.append(jsonAux)
+            elif listAuxRepetidos["Indices"][0] == 1:
+                jsonAux["Emoticon"] = elem["Emoticon"]
+                jsonAux["Polaridade"] = "Negativa"
+                emoticonPolaridade.append(jsonAux)
+            elif listAuxRepetidos["Indices"][0] == 2:
+                jsonAux["Emoticon"] = elem["Emoticon"]
+                jsonAux["Polaridade"] = "Neutra"
+                emoticonPolaridade.append(jsonAux)
         else:
-        	jsonAuxIndefinido["Emoticon"] = elem["Emoticon"]
-        	jsonAuxIndefinido["Polaridade"] = "Indefinida"
-        	emoticonPolaridade.append(jsonAuxIndefinido)
+            jsonAuxIndefinido["Emoticon"] = elem["Emoticon"]
+            jsonAuxIndefinido["Polaridade"] = "Indefinida"
+            emoticonPolaridade.append(jsonAuxIndefinido)
 
-    return emoticonPolaridade,emoticonIndefinido
+    return emoticonPolaridade, emoticonIndefinido
 
 # Função para calcular o tipo principal de cada emoticon
 def calculaValorDoTipo(jsonBD):
@@ -273,9 +280,7 @@ def classificaTipo(emoticonsBD, postagensAux):
         listAuxTipos.append(ajudaAux)
         listAuxTipos.append(sugestaoAux)
         valorMaxRepetidoTipo = verificaMaximoRepetidos(listAuxTipos)
-        # print(elem)
-        # print(listAuxTipos)
-        # exit()
+
         jsonAux["Postagem"] = elem["text"]
         jsonAux["Tipo"] = []
         for i in valorMaxRepetidoTipo["Indices"]:
@@ -297,46 +302,36 @@ def classificaTipo(emoticonsBD, postagensAux):
 
 # Executa a stack para classificar as postagens
 def classificaPostagem(postagensAux):
-    classificacaoPolaridade = []
-    classificacaoTipo = []
+    classificacaoPostagem = [] #Armazena as postagens e suas respectivas classificações
+    classificacaoPolaridade = [] #Armazena as polaridades dos emoticons presentes na sentença
+    classificacaoTipo = [] #Armazena os tipos referentes aos emoticons presentes na sentença
     emoticonBDAux = toFormatJsonEmoticon(".\PlanilhaBDEmoticon.csv")
-    emoticonsPolaridade,emoticonsIndefinidos = calculaPolaridade(emoticonBDAux)
+    # Calcula a polaridade/tipo para a base de dados dos emoticons
+    emoticonsPolaridade, emoticonsIndefinidos = calculaPolaridade(emoticonBDAux)
     emoticonsTipo = calculaValorDoTipo(emoticonBDAux)
+    # Calcula a polaridade/tipo para a base de dados de postagens
+    classificacaoPolaridade = classificaPolaridade(emoticonsPolaridade, postagensAux)
+    classificacaoTipo = classificaTipo(emoticonsTipo, postagensAux)
+    #Começa armazenar ambas classificações em uma unica variavel
+    classificacaoPostagem = classificacaoPolaridade
+    jsonAux = {}
+    for i in range(len(classificacaoTipo)):
+        jsonAux["Tipo"] = []
+        jsonAux["Tipo"] = classificacaoTipo[i]["Tipo"]
+        classificacaoPostagem[i].update(jsonAux)
 
-    # classificacaoPolaridade = classificaPolaridade(emoticonsPolaridade, postagensAux)
-    classificacaoTipo = classificaTipo(emoticonsTipo,postagensAux)
-    # jsonClassificadoPolaridadeAux = []
-    # for elem in postagensAux:
-    #     polaridadeAux = 0
-    #     for elem2 in emoticonsPolaridade:
-    #         jsonAux = {}
-    #         if (elem["text"].find(elem2["Emoticon"])) >= 0:
-    #             if elem2["Polaridade"] == "Positiva":
-    #                 polaridadeAux += 1
-    #             elif elem2["Polaridade"] == "Negativa":
-    #                 polaridadeAux -= 1
-    #     if polaridadeAux == 0:
-    #         jsonAux["Postagem"] = elem["text"]
-    #         jsonAux["Polaridade"] = "Neutra"
-    #         jsonClassificadoPolaridadeAux.append(jsonAux)
-    #     elif polaridadeAux > 0:
-    #         jsonAux["Postagem"] = elem["text"]
-    #         jsonAux["Polaridade"] = "Positiva"
-    #         jsonClassificadoPolaridadeAux.append(jsonAux)
-    #     if polaridadeAux < 0:
-    #         jsonAux["Postagem"] = elem["text"]
-    #         jsonAux["Polaridade"] = "Negativa"
-    #         jsonClassificadoPolaridadeAux.append(jsonAux)
-    # return jsonClassificadoPolaridadeAux
 
-    return classificacaoPolaridade
+    return classificacaoPostagem
 # jsonPostagensClassificadas = classificaPostagem(toFormatJsonData(".\PostagensJsonTotal11-05-2019.json"))
-onlyPru = separaPru(toFormatJsonBDPostagens(".\PlanilhaTotal11-05-2019Aux.csv"))
+onlyPru = separaPru(toFormatJsonBDPostagens(".\PlanilhaTotal11-05-2019.csv"))
 jsonPostagensClassificadasPrus = classificaPostagem(onlyPru)
+# df = pd.DataFrame(jsonPostagensClassificadasPrus)
+# df = df[["Postagem", "Polaridade", "Tipo"]]
+# df.to_excel("../PostagensClassificadas/PostagensPolaridadeJsonTotal11-05-2019.xlsx")
+# exit()
 
-# pd.DataFrame(jsonPostagensClassificadasPrus).to_excel("../PostagensClassificadas/PostagensPolaridadeJsonTotal11-05-2019.xlsx")
 # Verificação de acertos que a classificação de polaridade possui
-def verificaAcertos(postagensManual, postagensAutomatico):
+def verificaAcertosPolaridade(postagensManual, postagensAutomatico):
     acertos = 0
     erros = 0
     postagensAcertadas = []
@@ -358,9 +353,45 @@ def verificaAcertos(postagensManual, postagensAutomatico):
     print(len(postagensManual))
     print(acertos)
     print(erros)
-verificaAcertos(onlyPru,jsonPostagensClassificadasPrus)
-exit()
+# verificaAcertosPolaridade(onlyPru,jsonPostagensClassificadasPrus)
+# exit()
 
+def verificaAcertosTipo(postagensManual, postagensAutomatico):
+    acertos = 0
+    erros = 0
+    postagensAcertadas = []
+    postagensErradas = []
+    tipoAux = []
+    tipoAux = postagensManual[3]["Tipo"].replace(" ","").split(",")
+    # {'ID': 1108171452581326849, 'N°': 23, 'Data': 'Wed Mar 20 01:00:37 +0000 2019',
+    #  'text': 'Hora acho Twitter legal, hora acho tedioso 😴', 'Emojis da Postagem': '😴(1)', 'PRU/Não-PRU': 'PRU',
+    # 'Tipo': 'Elogio, Crítica', 'Analise de Sentimento': 'Neutra', 'Artefato': 'Twitter for iPhone'}
+    for i in range(len(postagensManual)):
+        for i in tipoAux:
+            if tipoAux.equal == postagensAutomatico[3]["Tipo"]:
+                print("Show")
+                exit()
+
+    # for i in range(len(postagensManual)):
+    #     jsonAcertosAux = {}
+    #     jsonErrosAux = {}
+    #     for i in range(len(postagensAutomatico["Tipo"])):
+    #         print(postagensAutomatico)
+
+
+        #     if postagensManual[i]["Analise de Sentimento"] == postagensAutomatico[i]["Polaridade"]:
+        #         acertos += 1
+        #         jsonAcertosAux = postagensManual[i]
+        #         postagensAcertadas.append(jsonAcertosAux)
+        #     else:
+        #         erros += 1
+        #         jsonErrosAux = postagensManual[i]
+        #         postagensErradas.append(jsonErrosAux)
+    print(len(postagensManual))
+    print(acertos)
+    print(erros)
+verificaAcertosTipo(onlyPru, jsonPostagensClassificadasPrus)
+exit()
 #Transformar o dicionário de classifica de postagens em csv
 # dir = "/PostagensClassificadas"
 # if "PostagensClassificadas" not in os.listdir("../../AlgoritmoTCC_MicroServicesEmoticons"):
