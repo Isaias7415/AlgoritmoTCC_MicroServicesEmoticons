@@ -54,8 +54,8 @@ def toFormatJsonBDPostagens(path):
     postagensCsvAux = pd.read_csv(arqPostagenCSV)
     arqPostagenCSV.close()
     postagensDF = pd.DataFrame(postagensCsvAux)
-    # print(postagensDF["PRU/Não-PRU"].head())
-    # exit()
+    print(postagensDF.head())
+    exit()
     jsonPostagensAux = []
     for i in postagensDF.index:
         jsonAux = {}
@@ -350,10 +350,11 @@ def verificaAcertosPolaridade(postagensManual, postagensAutomatico):
             erros += 1
             jsonErrosAux = postagensManual[i]
             postagensErradas.append(jsonErrosAux)
-    print(len(postagensManual))
-    print(acertos)
-    print(erros)
-# verificaAcertosPolaridade(onlyPru,jsonPostagensClassificadasPrus)
+    print("Polaridade")
+    print("Total Postagens: "+str(len(postagensManual)))
+    print("Acertos:"+str(acertos) + " Porcentagem: "+str(round((acertos*100)/len(postagensManual),2)))
+    print("Erros: "+str(erros) + " Porcentagem: "+str(round((erros*100)/len(postagensManual),2)))
+verificaAcertosPolaridade(onlyPru,jsonPostagensClassificadasPrus)
 # exit()
 
 def verificaAcertosTipo(postagensManual, postagensAutomatico):
@@ -361,35 +362,25 @@ def verificaAcertosTipo(postagensManual, postagensAutomatico):
     erros = 0
     postagensAcertadas = []
     postagensErradas = []
-    tipoAux = []
-    tipoAux = postagensManual[3]["Tipo"].replace(" ","").split(",")
-    # {'ID': 1108171452581326849, 'N°': 23, 'Data': 'Wed Mar 20 01:00:37 +0000 2019',
-    #  'text': 'Hora acho Twitter legal, hora acho tedioso 😴', 'Emojis da Postagem': '😴(1)', 'PRU/Não-PRU': 'PRU',
-    # 'Tipo': 'Elogio, Crítica', 'Analise de Sentimento': 'Neutra', 'Artefato': 'Twitter for iPhone'}
+    # tipoAuxManual = postagensManual[3]["Tipo"].replace(" ","").split(",")
+    # tipoAuxAutomatico = postagensAutomatico[3]["Tipo"]
     for i in range(len(postagensManual)):
-        for i in tipoAux:
-            if tipoAux.equal == postagensAutomatico[3]["Tipo"]:
-                print("Show")
-                exit()
-
-    # for i in range(len(postagensManual)):
-    #     jsonAcertosAux = {}
-    #     jsonErrosAux = {}
-    #     for i in range(len(postagensAutomatico["Tipo"])):
-    #         print(postagensAutomatico)
-
-
-        #     if postagensManual[i]["Analise de Sentimento"] == postagensAutomatico[i]["Polaridade"]:
-        #         acertos += 1
-        #         jsonAcertosAux = postagensManual[i]
-        #         postagensAcertadas.append(jsonAcertosAux)
-        #     else:
-        #         erros += 1
-        #         jsonErrosAux = postagensManual[i]
-        #         postagensErradas.append(jsonErrosAux)
-    print(len(postagensManual))
-    print(acertos)
-    print(erros)
+        jsonAcertosAux = {}
+        jsonErrosAux = {}
+        tipoAuxManual = postagensManual[i]["Tipo"]
+        tipoAuxAutomatico = postagensAutomatico[i]["Tipo"]
+        if tipoAuxManual == tipoAuxAutomatico:
+            acertos += 1
+            jsonAcertosAux = postagensManual[i]
+            postagensAcertadas.append(jsonAcertosAux)
+        else:
+            erros += 1
+            jsonErrosAux = postagensManual[i]
+            postagensErradas.append(jsonErrosAux)
+    print("Tipo")
+    print("Total Postagens: "+str(len(postagensManual)) )
+    print("Acertos:"+str(acertos) + " Porcentagem: "+str(round((acertos*100)/len(postagensManual),2)))
+    print("Erros: "+str(erros) + " Porcentagem: "+str(round((erros*100)/len(postagensManual),2)))
 verificaAcertosTipo(onlyPru, jsonPostagensClassificadasPrus)
 exit()
 #Transformar o dicionário de classifica de postagens em csv

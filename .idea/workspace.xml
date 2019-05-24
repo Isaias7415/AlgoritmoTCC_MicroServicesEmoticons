@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41788a52-10cb-4d52-b1c0-5b2eb960d3e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/algoritmoClassificacao/Classificação - Artigo análise longitudinal - 2011.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algortimoThiago/Classificação - Artigo análise longitudinal - 2011.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algortimoThiago/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algortimoThiago/algoritmoThiago.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algortimoThiago/classificaçãoThiago.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PostagensClassificadas/PostagensPolaridadeJsonTotal11-05-2019.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/PostagensClassificadas/PostagensPolaridadeJsonTotal11-05-2019.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaTotal11-05-2019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/algoritmoClassificacao/PlanilhaTotal11-05-2019.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algoritmoClassificacao/toClassification.py" beforeDir="false" afterPath="$PROJECT_DIR$/algoritmoClassificacao/toClassification.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,28 +18,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algoritmoClassificacao/toClassification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="364" column="54" selection-start-line="364" selection-start-column="54" selection-end-line="364" selection-end-column="54" />
+            <state relative-caret-position="6783">
+              <caret line="327" selection-start-line="327" selection-end-line="330" selection-end-column="8" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
-                <element signature="e#3277#3776#0" />
-                <element signature="e#6369#7838#0" />
-                <element signature="e#8182#9175#0" />
-                <element signature="e#9228#11472#0" />
-                <element signature="e#12857#13541#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/toCsv/toCSV.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/algortimoThiago/algoritmoThiago.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2662">
-              <caret line="142" column="14" lean-forward="true" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="14" />
+            <state relative-caret-position="423">
+              <caret line="164" column="6" selection-start-line="164" selection-start-column="6" selection-end-line="164" selection-end-column="6" />
+              <folding>
+                <element signature="e#24#33#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,6 +58,7 @@
       <find>🤜</find>
       <find>print</find>
       <find>len(classificacaoTipo[&quot;Tipo&quot;])</find>
+      <find>split</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -74,14 +76,15 @@
         <option value="$PROJECT_DIR$/toCsv/toCSV.py" />
         <option value="$PROJECT_DIR$/algoritmoClassificacao/PostagensJsonTotal11-05-2019.json" />
         <option value="$PROJECT_DIR$/algoritmoClassificacao/toClassification.py" />
+        <option value="$PROJECT_DIR$/algortimoThiago/algoritmoThiago.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="170" />
-    <option name="y" value="91" />
-    <option name="width" value="1026" />
-    <option name="height" value="546" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -103,7 +106,7 @@
             <path>
               <item name="AlgoritmoTCC_MicroServicesEmoticons" type="b2602c69:ProjectViewProjectNode" />
               <item name="AlgoritmoTCC_MicroServicesEmoticons" type="462c0819:PsiDirectoryNode" />
-              <item name="toCsv" type="462c0819:PsiDirectoryNode" />
+              <item name="algortimoThiago" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -138,7 +141,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.toClassification">
+  <component name="RunManager" selected="Python.algoritmoThiago">
+    <configuration name="algoritmoThiago" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AlgoritmoTCC_MicroServicesEmoticons" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algortimoThiago" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algortimoThiago/algoritmoThiago.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="toCSV" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AlgoritmoTCC_MicroServicesEmoticons" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -183,6 +207,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.algoritmoThiago" />
         <item itemvalue="Python.toClassification" />
         <item itemvalue="Python.toCSV" />
       </list>
@@ -248,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558027717913</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update no algoritmo de classificação">
+      <created>1558103506930</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1558103506930</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -264,20 +296,20 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49851632" weight="0.10491072" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49851632" visible="true" weight="0.14806548" />
       <window_info id="Structure" order="1" sideWeight="0.5014837" side_tool="true" weight="0.10491072" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3420622" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.44844517" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.792144" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4301192" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.66121113" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.66088843" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -331,22 +363,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/toCsv/toCSV.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2662">
-          <caret line="142" column="14" lean-forward="true" selection-start-line="142" selection-start-column="14" selection-end-line="142" selection-end-column="14" />
+        <state relative-caret-position="378">
+          <caret line="39" selection-start-line="39" selection-end-line="45" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algoritmoClassificacao/toClassification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="364" column="54" selection-start-line="364" selection-start-column="54" selection-end-line="364" selection-end-column="54" />
+        <state relative-caret-position="6783">
+          <caret line="327" selection-start-line="327" selection-end-line="330" selection-end-column="8" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
-            <element signature="e#3277#3776#0" />
-            <element signature="e#6369#7838#0" />
-            <element signature="e#8182#9175#0" />
-            <element signature="e#9228#11472#0" />
-            <element signature="e#12857#13541#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algortimoThiago/algoritmoThiago.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="164" column="6" selection-start-line="164" selection-start-column="6" selection-end-line="164" selection-end-column="6" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
